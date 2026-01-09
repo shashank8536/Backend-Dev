@@ -1,0 +1,2 @@
+New log data
+This line is appended log data
