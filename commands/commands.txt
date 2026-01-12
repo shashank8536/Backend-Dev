@@ -1,187 +1,109 @@
-**File and Directory Commands**
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (Extra-task)
+$ git branch
+* Extra-task
 
-| Command | Purpose                  |
-| ------- | ------------------------ |
-| `ls`    | List files               |
-| `pwd`   | Show current directory   |
-| `cd`    | Change directory         |
-| `mkdir` | Create directory         |
-| `rmdir` | Delete empty directory   |
-| `touch` | Create empty file        |
-| `cp`    | Copy files/directories   |
-| `mv`    | Move / rename            |
-| `rm`    | Delete files/directories |
-| `tree`  | Directory structure      |
-| `stat`  | File details             |
-| `file`  | File type                |
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (Extra-task)
+$ git fetch origin
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 870 bytes | 41.00 KiB/s, done.
+From https://github.com/shashank8536/Backend-Dev
+ * [new branch]      main       -> origin/main
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (Extra-task)
+$ git branch -r
+  origin/Extra-task
+  origin/HEAD -> origin/main
+  origin/main
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (Extra-task)
+$ git checkout -b main origin/main
+branch 'main' set up to track 'origin/main'.
+Switched to a new branch 'main'
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (main)
+$ git branch
+  Extra-task
+* main
 
-**File viewing and Text display**
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (main)
+$ git checkout -b X
+Switched to a new branch 'X'
 
-| Command | Purpose                |
-| ------- | ---------------------- |
-| `cat`   | Display file           |
-| `tac`   | Reverse display        |
-| `less`  | Scroll file            |
-| `more`  | Paginated view         |
-| `head`  | First lines            |
-| `tail`  | Last lines             |
-| `watch` | Run command repeatedly |
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (X)
+$ git checkout main
+git checkout -b Y
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Switched to a new branch 'Y'
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (Y)
+$ git checkout main
+git checkout -b unix-commands-git-github
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+Switched to a new branch 'unix-commands-git-github'
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git status
+On branch unix-commands-git-github
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        commands/
+        hello.js
+        promises.js
+        server.js
 
+nothing added to commit but untracked files present (use "git add" to track)
 
-**Text Processing**
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$  commands/
+bash: commands/: Is a directory
 
-| Command | Purpose              |
-| ------- | -------------------- |
-| `grep`  | Search text          |
-| `egrep` | Extended grep        |
-| `fgrep` | Fixed grep           |
-| `sed`   | Stream editor        |
-| `awk`   | Pattern scanning     |
-| `sort`  | Sort text            |
-| `uniq`  | Remove duplicates    |
-| `wc`    | Word/line count      |
-| `cut`   | Extract columns      |
-| `paste` | Merge files          |
-| `tr`    | Translate characters |
-| `nl`    | Number lines         |
-| `fold`  | Line wrapping        |
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git add  commands/
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git commit -m "[Shashank] added basic commands"
+[unix-commands-git-github 7e62e32] [Shashank] added basic commands
+ 1 file changed, 187 insertions(+)
+ create mode 100644 commands/commands.txt
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git push origin unix-xommands-git-github
+error: src refspec unix-xommands-git-github does not match any
+error: failed to push some refs to 'https://github.com/shashank8536/Backend-Dev.git'
 
-**File Permissions & Ownership**
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$  commands/
+bash: commands/: Is a directory
 
-| Command   | Purpose             |
-| --------- | ------------------- |
-| `chmod`   | Change permissions  |
-| `chown`   | Change owner        |
-| `chgrp`   | Change group        |
-| `umask`   | Default permissions |
-| `getfacl` | Get ACL             |
-| `setfacl` | Set ACL             |
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git push origin unix-xommands-git-github
+error: src refspec unix-xommands-git-github does not match any
+error: failed to push some refs to 'https://github.com/shashank8536/Backend-Dev.git'
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git push origin unix-commands-git-github
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 1.89 KiB | 387.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/shashank8536/Backend-Dev.git
+   ef69886..7e62e32  unix-commands-git-github -> unix-commands-git-github
 
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git branch -d X
+Deleted branch X (was ef69886).
 
-**Process Management**
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git branch -d Y
+Deleted branch Y (was ef69886).
 
-| Command   | Purpose           |
-| --------- | ----------------- |
-| `ps`      | Process status    |
-| `top`     | Live processes    |
-| `htop`    | Enhanced top      |
-| `kill`    | Kill process      |
-| `killall` | Kill by name      |
-| `nice`    | Set priority      |
-| `renice`  | Change priority   |
-| `bg`      | Resume background |
-| `fg`      | Resume foreground |
-| `jobs`    | Active jobs       |
-| `watch`   | Monitor commands  |
-
-
-
-**Disk and storage Commands**
-
-| Command  | Purpose           |
-| -------- | ----------------- |
-| `df`     | Disk usage        |
-| `du`     | Directory size    |
-| `mount`  | Mount filesystem  |
-| `umount` | Unmount           |
-| `lsblk`  | Block devices     |
-| `blkid`  | Device info       |
-| `fsck`   | File system check |
-
-
-
-**Networking Commands**
-
-| Command      | Purpose            |
-| ------------ | ------------------ |
-| `ping`       | Network check      |
-| `ifconfig`   | Interface config   |
-| `ip`         | Network config     |
-| `netstat`    | Network stats      |
-| `ss`         | Socket stats       |
-| `traceroute` | Route trace        |
-| `nslookup`   | DNS lookup         |
-| `curl`       | API / URL requests |
-| `wget`       | Download files     |
-| `ftp`        | File transfer      |
-| `scp`        | Secure copy        |
-| `ssh`        | Secure login       |
-
-
-
-**Compression and Archiving**
-
-| Command  | Purpose       |
-| -------- | ------------- |
-| `tar`    | Archive files |
-| `gzip`   | Compress      |
-| `gunzip` | Decompress    |
-| `zip`    | Zip files     |
-| `unzip`  | Extract zip   |
-| `bzip2`  | Compress      |
-| `xz`     | Compress      |
-
-
-
-**System Information**
-
-| Command    | Purpose         |
-| ---------- | --------------- |
-| `uname`    | OS info         |
-| `hostname` | System name     |
-| `uptime`   | System runtime  |
-| `whoami`   | Current user    |
-| `who`      | Logged-in users |
-| `id`       | User ID         |
-| `free`     | Memory          |
-| `vmstat`   | Memory stats    |
-| `iostat`   | CPU stats       |
-| `lscpu`    | CPU info        |
-| `lsusb`    | USB devices     |
-| `lspci`    | PCI devices     |
-
-
-**Shell Environment**
-
-| Command   | Purpose               |
-| --------- | --------------------- |
-| `echo`    | Print output          |
-| `env`     | Environment variables |
-| `export`  | Set env var           |
-| `set`     | Shell variables       |
-| `alias`   | Create shortcut       |
-| `unalias` | Remove shortcut       |
-| `history` | Command history       |
-| `source`  | Execute file          |
-| `clear`   | Clear terminal        |
-
-
-
-**Vi/Nano Editor**
-
-| Command      | Purpose       |
-| ------------ | ------------- |
-| `vi` / `vim` | Text editor   |
-| `nano`       | Simple editor |
-| `ed`         | Line editor   |
-
-
-
-**Redirection and Pipes**
-
-| Symbol | Meaning         |      |
-| ------ | --------------- | ---- |
-| `>`    | Output redirect |      |
-| `>>`   | Append          |      |
-| `<`    | Input redirect  |      |
-| `      | `               | Pipe |
-| `2>`   | Error redirect  |      |
-| `&>`   | All output      |      |
+Shashank Shekhar@DESKTOP-52AIKFN MINGW64 ~/Desktop/Class Backened (unix-commands-git-github)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
