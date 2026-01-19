@@ -1,0 +1,22 @@
+{
+  "name": "expressproject",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shashank8536/Backend-Dev.git"
+  },
+  "author": "Shashank shekhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shashank8536/Backend-Dev/issues"
+  },
+  "homepage": "https://github.com/shashank8536/Backend-Dev#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
