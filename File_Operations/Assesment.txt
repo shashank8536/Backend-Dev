@@ -1,0 +1,116 @@
+1. Difference between synchronous and asynchronous file operations
+
+Synchronous (sync) operations block the event loop until the task completes.
+Example: fs.readFileSync()
+The program waits and nothing else runs meanwhile.
+
+Asynchronous (async) operations do not block the event loop. They use callbacks, promises, or async/await.
+Example: fs.readFile()
+The program continues executing while the file is being read.
+
+Sync = blocking, simpler
+Async = non-blocking, better performance & scalability
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+2. When should you use file streams instead of reading the entire file?
+
+Use file streams when:
+
+* The file is very large (to avoid high memory usage)
+
+* You want to process data chunk-by-chunk
+
+* You need faster I/O performance
+
+* You’re piping data (e.g., file copy, compression, network transfer)
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+3. Purpose of the utf8 encoding parameter
+
+The utf8 parameter tells Node.js to decode the file content into a readable string instead of returning raw binary data (Buffer).
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+4. Common error codes in file system operations
+
+Error Code	                    Meaning
+  ENOENT	            File or directory does not exist
+  EACCES	            Permission denied
+  EISDIR	            Path is a directory, not a file
+  ENOTDIR	            A part of the path is not a directory
+  EEXIST	            File or directory already exists
+  EBUSY	                Resource is busy or locked
+  EMFILE	            Too many open files
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+5. How to safely delete a directory with all its contents
+
+Use recursive deletion 
+Code:
+const fs = require("fs");
+fs.rm("myFolder", { recursive: true, force: true }, (err) => {
+  if (err) console.error(err);
+  else console.log("Directory deleted safely");
+});
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+6. Concept of piping in streams (with example)
+
+Piping means sending data from one stream directly into another without manually handling chunks.
+
+Example: Copy a file
+Code:
+const fs = require("fs");
+const readStream = fs.createReadStream("input.txt");
+const writeStream = fs.createWriteStream("output.txt");
+readStream.pipe(writeStream);
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+7. Why is it important to handle errors in file operations?
+
+Because file operations can fail due to:
+Missing files
+Permission issues
+Disk full
+File locks
+Invalid paths
+
+
+If errors are not handled:
+App may crash
+Data loss can occur
+Program becomes unreliable
+Security risks increase
+
+Code:
+fs.readFile("data.txt", "utf8", (err, data) => {
+  if (err) {
+    console.error("Error reading file:", err.message);
+    return;
+  }
+  console.log(data);
+});
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+8. Difference between writeFile and appendFile
+
+Method	                        Behavior
+writeFile	        Overwrites the file (or creates a new one)
+appendFile	        Adds data to the end of the file
+
+
+Example:
+fs.writeFile("log.txt", "Hello\n", () => {});
+fs.appendFile("log.txt", "World\n", () => {});
+
+Output:
+Hello
+World
+
+---------------------------------------------------------------------------------------------------------------------------------
