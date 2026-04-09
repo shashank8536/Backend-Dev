@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Details</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+
+<div class="container mt-5">
+
+  <div class="card shadow">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Employee Details</h5>
+      <a href="/add" class="btn btn-success btn-sm">+ Add User</a>
+    </div>
+
+    <div class="card-body">
+
+      <table class="table table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Start Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% employees.forEach(emp => { %>
+          <tr>
+            <td><%= emp.name %></td>
+            <td><%= emp.gender %></td>
+            <td><%= emp.department %></td>
+            <td>₹ <%= emp.basicSalary %></td>
+            <td><%= emp.joiningDate.toDateString() %></td>
+            <td>
+              <a href="/edit/<%= emp._id %>" class="btn btn-primary btn-sm">Edit</a>
+              <a href="/delete/<%= emp._id %>" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
